@@ -21,7 +21,7 @@ module Audited
 
         # serialize :audited_changes
 
-        default_scope         ->{ order(:version)}
+        # default_scope         ->{ order(:version)}
         scope :descending,    ->{ reorder("version DESC")}
         scope :creates,       ->{ where({:action => 'create'})}
         scope :updates,       ->{ where({:action => 'update'})}
