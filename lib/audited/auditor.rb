@@ -207,6 +207,7 @@ module Audited
       def write_audit(attrs)
         attrs[:associated] = self.send(audit_associated_with) unless audit_associated_with.nil?
         self.audit_comment = nil
+        attrs[:audited_changes] = attrs[:audited_changes].to_json
         run_callbacks(:audit)  { self.audits.create(attrs) } if auditing_enabled
       end
 
