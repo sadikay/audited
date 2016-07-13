@@ -18,8 +18,6 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^spec\//)
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'rails-observers', '>= 0.1.2'
-
   gem.add_development_dependency "protected_attributes"
   gem.add_development_dependency 'appraisal', '~> 1.0.0'
   gem.add_development_dependency 'mongo_mapper', '~> 0.13.0.beta2'
