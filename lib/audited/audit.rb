@@ -52,7 +52,7 @@ module Audited
 
     # Returns a hash of the changed attributes with the new values
     def new_attributes
-      (audited_changes || {}).inject({}.with_indifferent_access) do |attrs, (attr, values)|
+      ((audited_changes.is_a?(String) ? JSON.parse(audited_changes) : audited_changes ) || {}).inject({}.with_indifferent_access) do |attrs, (attr, values)|
         attrs[attr] = values.is_a?(Array) ? values.last : values
         attrs
       end
